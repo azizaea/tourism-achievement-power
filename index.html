@@ -2,243 +2,338 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Tourism Achievement Power - Company Profile</title>
+  <title>Tourism Achievement Power - Events & Experiences</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --green: #009867;
-      --dark-green: #03654f;
-      --light: #fff;
-      --bg: #f5f7fa;
-      --box: #f0faf8;
+      --primary: #009867;
+      --accent: #23b274;
+      --bg: #f6f8fb;
+      --white: #fff;
+      --box: #f9fbfc;
+      --shadow: 0 8px 48px 0 rgba(0,40,40,0.12);
     }
     body {
       margin: 0;
       font-family: 'Montserrat', Arial, sans-serif;
       background: var(--bg);
       color: #222;
+      min-height: 100vh;
     }
-    .header {
-      background: var(--light);
-      padding: 2rem 0 1rem 0;
-      text-align: center;
+    /* HEADER */
+    header {
+      background: var(--white);
+      box-shadow: var(--shadow);
+      padding: .2rem 0 .7rem 0;
+      z-index: 10;
+      position: sticky;
+      top: 0;
+    }
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .2rem 2vw .6rem 2vw;
     }
     .logo {
-      display: inline-block;
-      margin-bottom: 0.3rem;
+      display: flex;
+      align-items: center;
+      gap: .7rem;
     }
     .logo-shape {
-      width: 32px;
-      height: 32px;
-      background: var(--green);
-      border-radius: 9px;
-      display: inline-block;
-      vertical-align: middle;
+      width: 35px; height: 35px; background: var(--primary);
+      border-radius: 8px;
     }
     .logo-text {
-      color: var(--green);
-      font-weight: 700;
-      font-size: 1.05rem;
-      letter-spacing: 1.2px;
-      line-height: 1.1;
-      display: inline-block;
-      margin-left: .7rem;
-      vertical-align: middle;
+      color: var(--primary);
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: .05em;
+      line-height: 1.05;
     }
     nav {
-      text-align: center;
-      padding: .7rem 0;
-      background: var(--box);
+      display: flex; gap: 1.2rem;
     }
     nav a {
-      color: var(--green);
+      color: var(--primary);
       text-decoration: none;
-      margin: 0 1.1rem;
-      font-weight: bold;
-      transition: color .2s;
-      font-size: 1.06rem;
-    }
-    nav a:hover { color: var(--dark-green);}
-    main { max-width: 1100px; margin: 2.5rem auto; background: var(--light); border-radius: 20px; box-shadow: 0 6px 32px 0 rgba(80,100,80,0.07); padding: 2rem 2.5vw;}
-    .section {margin-bottom: 2.9rem;}
-    h1, h2 {
-      color: var(--green);
-      font-weight: 900;
-      margin-top: 0;
-    }
-    h1 { font-size: 2.1rem;}
-    h2 { font-size: 1.3rem; text-transform: uppercase; letter-spacing: .09em; }
-    .intro { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;}
-    .intro-left {flex: 2;}
-    .intro-right {flex: 1; margin-left: 2vw;}
-    .intro-img {
-      width: 280px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 28px;
-      box-shadow: 0 0 0 8px var(--box), 0 6px 28px rgba(80,110,80,0.12);
-      transform: rotate(6deg);
-      background: var(--box);
-    }
-    .cta-btn {
-      background: var(--green);
-      color: var(--light);
       font-weight: 700;
-      font-size: 1.1rem;
-      border: none;
-      outline: none;
-      padding: 0.9rem 2.2rem;
-      border-radius: .65rem;
-      cursor: pointer;
-      margin-top: 1.6rem;
-      box-shadow: 0 2px 18px 0 rgba(0, 160, 110, 0.13);
-      letter-spacing: .05em;
-      transition: background .2s;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .cta-btn:hover { background: var(--dark-green);}
-    .services-list {display: flex; gap: 2rem; flex-wrap: wrap;}
-    .service-card {
-      flex: 1;
-      min-width: 250px;
-      background: var(--box);
-      border-radius: 8px;
-      padding: 1.3rem 1rem .7rem 1rem;
-      margin: 1rem 0;
-      box-shadow: 0 1px 7px #e3eee3;
-    }
-    .core-values {
-      display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.2rem 0;
-    }
-    .core-value { background: var(--green); color: var(--light); border-radius: 36px; padding: .5rem 1.3rem; font-size: 1rem; font-weight: 600;}
-    .why-list { margin: 1.3rem 0 0 1rem;}
-    .testimonial {
-      background: var(--box);
-      border-left: 6px solid var(--green);
-      margin: 1.2rem 0;
-      padding: 1rem 2rem;
-      border-radius: 6px;
-      font-style: italic;
-    }
-    .contact-form {
-      display: flex; flex-direction: column; gap: .8rem; max-width: 410px;
-    }
-    .contact-form input, .contact-form textarea {
-      padding: 0.7rem;
+      transition: color .2s;
       font-size: 1rem;
-      border-radius: 6px;
-      border: 1px solid #eee;
+      padding: .3rem .7rem;
+      border-radius: 7px;
+    }
+    nav a:hover {
+      background: var(--accent);
+      color: var(--white);
+    }
+
+    /* HERO SECTION */
+    .hero {
+      background: linear-gradient(110deg, var(--box) 70%, #d6f8de 100%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2.5rem;
+      max-width: 1200px;
+      margin: 2.5rem auto 0 auto;
+      padding: 2.5rem 2vw 2.5rem 2vw;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      flex-wrap: wrap;
+    }
+    .hero-content { flex: 1.3; min-width: 275px;}
+    .hero-content h1 {
+      font-size: 2.7rem;
+      color: var(--primary);
+      font-weight: 900;
+      margin-bottom: .7rem;
+    }
+    .hero-content p {
+      font-size: 1.25rem;
+      color: #234;
+      margin: .6rem 0 2.1rem 0;
+      line-height: 1.55;
+    }
+    .hero-btns {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+    }
+    .primary-btn, .secondary-btn {
+      background: var(--primary);
+      color: var(--white);
+      padding: 1.1rem 2.7rem;
+      border-radius: 1.8rem;
+      font-size: 1.22rem;
+      font-weight: bold;
+      border: none;
+      transition: background .22s, color .22s;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 2px 12px 0 rgba(0, 170, 130, 0.14);
+    }
+    .secondary-btn {
+      background: var(--white); color: var(--primary); border: 2px solid var(--primary); margin-left: 0;
+    }
+    .primary-btn:hover { background: var(--accent);}
+    .secondary-btn:hover { background: var(--primary); color: var(--white);}
+    .hero-img-wrap {
+      border-radius: 28px;
+      background: var(--box);
+      padding: .4rem;
+      box-shadow: 0 6px 32px rgba(40,140,80,0.10);
+      max-width: 380px; min-width: 220px;
+      margin: 0 auto;
+      overflow: hidden;
+      transform: rotate(6deg);
+    }
+    .hero-img-wrap img {
       width: 100%;
+      display: block;
+      border-radius: 24px;
+      height: 260px;
+      object-fit: cover;
     }
-    .contact-form button { background: var(--green); color: var(--light); padding: 1rem; border: none; border-radius: 7px; font-size: 1.1rem; font-weight: 700; cursor: pointer;}
-    @media (max-width: 880px) {
-      main { padding: 1.15rem 2vw;}
-      .intro { flex-direction: column; gap: 1.5rem;}
-      .intro-right { margin-left: 0;}
-      .intro-img { width: 95vw; max-width: 340px;}
-      .services-list { flex-direction: column; gap: 0; }
+
+    /* PROMOTIONAL SECTIONS */
+    .promo-section {
+      max-width: 1200px;
+      margin: 2.5rem auto 0 auto;
+      padding: 0 2vw 2.6rem 2vw;
     }
-    @media (max-width: 600px) {
-      .section {margin-bottom: 1.3rem;}
-      nav a { margin: 0 .5rem;}
-      h1 { font-size: 1.3rem;}
-      h2 { font-size: 1.05rem; }
+    .section-header {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1.1rem;
+      font-weight: 900;
+    }
+    .cards-grid {
+      display: grid;
+      gap: 2.3rem;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .card {
+      background: var(--white);
+      border-radius: 22px;
+      box-shadow: 0 7px 24px 0 rgba(30,170,120,.08);
+      overflow: hidden;
+      transition: transform .14s, box-shadow .15s;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      min-height: 390px;
+    }
+    .card img {
+      width: 100%; height: 160px; object-fit: cover;
+      display: block;
+      border-radius: 22px 22px 0 0;
+    }
+    .card-content {
+      padding: 1.1rem 1.5rem 2.3rem 1.5rem;
+      flex: 1;
+      display: flex; flex-direction: column;
+    }
+    .card-content .category {
+      color: var(--accent);
+      font-weight: bold;
+      font-size: .94rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: .38rem;
+    }
+    .card-content h3 {
+      color: var(--primary);
+      margin: .12rem 0 .55rem 0;
+      font-size: 1.18rem;
+    }
+    .card-content p {
+      color: #345;
+      flex: 1 1 60px;
+    }
+    .link-btn {
+      margin-top: 1.3em;
+      display: inline-block;
+      color: var(--primary);
+      font-weight: bold;
+      text-decoration: none;
+      border-bottom: 2px solid var(--primary);
+      transition: color .12s;
+      font-size: 1rem;
+    }
+    .link-btn:hover { color: var(--accent);}
+    .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 24px 56px 0 rgba(12, 170, 135, .10);
+    }
+    /* Responsive Adjustments */
+    @media (max-width: 980px) {
+      .nav-container {flex-direction: column; gap: .8rem;}
+      .hero, .promo-section { padding: 2vw .6rem;}
+      .hero-img-wrap img {height: 170px;}
+    }
+    @media (max-width: 700px) {
+      .hero {flex-direction: column-reverse; text-align: center; gap: 1.5rem;}
+      .promo-section {padding-bottom: 1.2rem;}
+      .section-header {font-size: 1.19rem;}
+      .hero-content h1 {font-size: 1.25rem;}
+      nav {gap: .4rem;}
     }
   </style>
 </head>
 <body>
-  <div class="header">
-    <div class="logo"><span class="logo-shape"></span>
-      <span class="logo-text"> TOURISM<br>ACHIEVEMENT<br>POWER</span>
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <div class="logo-shape"></div>
+        <span class="logo-text">TOURISM<br>ACHIEVEMENT POWER</span>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#events">Events</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-  </div>
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#experience">Experience</a>
-    <a href="#values">Core Values</a>
-    <a href="#why">Why Us?</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <main>
-    <section class="section intro" id="about">
-      <div class="intro-left">
-        <h1>WELCOME TO OUR COMPANY</h1>
-        <p>
-          Tourism Achievement Power is a dynamic event management company specializing in the organization and execution of high impact exhibitions, professional conferences, and memorable entertainment events.
-        </p>
-        <a href="#services" class="cta-btn">CONTINUE</a>
+  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Saudi Arabia’s Premier Event Management Experiences</h1>
+      <p>From world-class exhibitions and business conferences to unforgettable festivals and entertainment, Tourism Achievement Power delivers events that move audiences and grow brands across the Kingdom and beyond.</p>
+      <div class="hero-btns">
+        <a href="#services" class="primary-btn">Explore Services</a>
+        <a href="#contact" class="secondary-btn">Book a Consultation</a>
       </div>
-      <div class="intro-right">
-        <img class="intro-img" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=480&q=80" alt="Event backdrop">
-      </div>
-    </section>
-    <section class="section" id="services">
-      <h2>Our Company Premium Service</h2>
-      <div class="services-list">
-        <div class="service-card">
-          <h3>Exhibition & Trade Show Management</h3>
-          <p>From large-scale exhibitions to intimate trade shows, we handle everything from venue selection to event logistics, delivering seamless experiences for exhibitors and attendees.</p>
-        </div>
-        <div class="service-card">
-          <h3>Conference Coordination</h3>
-          <p>We manage all aspects of conferences—venue, speaker, registration, and on-site logistics. We foster engaging events and seamless execution.</p>
-        </div>
-        <div class="service-card">
-          <h3>Entertainment Events Organization</h3>
-          <p>We bring creativity and excitement to every event, from live performances to galas, ensuring every gathering is memorable and impactful.</p>
+    </div>
+    <div class="hero-img-wrap">
+      <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=480&q=80" alt="Saudi event or landscape">
+    </div>
+  </section>
+
+  <!-- PROMOTIONAL CARDS SECTION -->
+  <section class="promo-section" id="services">
+    <div class="section-header">Featured Services & Experiences</div>
+    <div class="cards-grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=500&q=80" alt="Exhibition">
+        <div class="card-content">
+          <span class="category">Exhibition</span>
+          <h3>High-Impact International Exhibitions</h3>
+          <p>Planning and executing exhibitions of every scale—from concept to crowd, complete with exhibitor and visitor services.</p>
+          <a href="#contact" class="link-btn">Book Now</a>
         </div>
       </div>
-    </section>
-    <section class="section" id="experience">
-      <h2>Experience</h2>
-      <p>
-        Our experience is unparalleled. We have successfully managed numerous exhibitions, conferences, and entertainment events across multiple industries. Our dedicated professionals ensure flawless execution at every step—idea to impact.
-      </p>
-    </section>
-    <section class="section" id="values">
-      <h2>Our Core Values</h2>
-      <div class="core-values">
-        <div class="core-value">Professionalism</div>
-        <div class="core-value">Creativity</div>
-        <div class="core-value">Reliability</div>
-        <div class="core-value">Integrity</div>
-        <div class="core-value">Customer Focus</div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?auto=format&fit=crop&w=500&q=80" alt="Conference">
+        <div class="card-content">
+          <span class="category">Conference</span>
+          <h3>Corporate Group Conferences</h3>
+          <p>Turnkey conference solutions: venue, speakers, registration, digital tools, and on-site management for networking success.</p>
+          <a href="#contact" class="link-btn">Request a Quote</a>
+        </div>
       </div>
-    </section>
-    <section class="section" id="why">
-      <h2>Why Choose Us?</h2>
-      <ul class="why-list">
-        <li>Custom event solutions tailored to your vision</li>
-        <li>Expert team with diverse industry experience</li>
-        <li>Proven track record and industry recognition</li>
-        <li>Creative, results-driven approach</li>
-        <li>Transparent, efficient event delivery</li>
-      </ul>
-    </section>
-    <section class="section" id="testimonials">
-      <h2>Client Testimonials</h2>
-      <div class="testimonial">
-        "Tourism Achievement Power made our conference a huge success—professional and creative throughout!" – Client A
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=500&q=80" alt="Entertainment">
+        <div class="card-content">
+          <span class="category">Entertainment</span>
+          <h3>Memorable Entertainment Events</h3>
+          <p>From dazzling galas and live shows to immersive festival experiences, we ignite your audience’s imagination.</p>
+          <a href="#contact" class="link-btn">Start Planning</a>
+        </div>
       </div>
-      <div class="testimonial">
-        "Impressive organization and attention to detail in our entertainment event. Highly recommended!" – Client B
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1444065381814-865dc9da92c0?auto=format&fit=crop&w=500&q=80" alt="Launch">
+        <div class="card-content">
+          <span class="category">Launches</span>
+          <h3>Product Launches & Special Events</h3>
+          <p>Strategic and creative event launches designed to capture attention, win headlines, and drive brand growth.</p>
+          <a href="#contact" class="link-btn">Get Started</a>
+        </div>
       </div>
-    </section>
-    <section class="section" id="contact">
-      <h2>Contact Us</h2>
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message" rows="4" required></textarea>
-        <button type="submit">Send Inquiry</button>
-      </form>
-      <p>Email: info@tourpow.com | Phone: +966-XXXXXXX</p>
-      <p>Address: Riyadh, Saudi Arabia</p>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- "ABOUT" SECTION -->
+  <section class="promo-section" id="about">
+    <div class="section-header">Why Choose Tourism Achievement Power?</div>
+    <div class="cards-grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=500&q=80" alt="Experience">
+        <div class="card-content">
+          <span class="category">Excellence</span>
+          <h3>Decades of Event Expertise</h3>
+          <p>Our team brings unmatched local and global event experience, creative vision, and logistical skill to every project.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=500&q=80" alt="Network">
+        <div class="card-content">
+          <span class="category">Network</span>
+          <h3>Strong Industry Partnerships</h3>
+          <p>We leverage the region’s best venues, suppliers, and technology to deliver seamless events for every audience.</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1424746219973-8fe3bd07d8e3?auto=format&fit=crop&w=500&q=80" alt="Results">
+        <div class="card-content">
+          <span class="category">Results</span>
+          <h3>Measurable Impact</h3>
+          <p>Your business outcomes, guest engagement, and event ROI are always our top priorities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALL TO ACTION / CONTACT -->
+  <section class="promo-section" id="contact" style="text-align:center;">
+    <div class="section-header">Ready to Plan an Unforgettable Event?</div>
+    <p style="font-size:1.18rem;color:#235;margin:1.2rem auto 2.2rem auto;max-width:510px;">
+      Let’s create extraordinary experiences together—schedule a call with our expert team and see how we bring your vision to life.
+    </p>
+    <a href="mailto:info@tourpow.com" class="primary-btn" style="margin-bottom:2.3rem;">Contact Us Now</a>
+    <br>
+    <p style="color:#678;">Email: info@tourpow.com &nbsp;|&nbsp; Riyadh, Saudi Arabia</p>
+  </section>
 </body>
 </html>
